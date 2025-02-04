@@ -3,5 +3,10 @@ name = "flatten"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "fl"
+path = "src/main.rs"
+
 [dependencies]
+anyhow = "1.0.95"
 clap = { version = "4.5.28", features = ["derive"] }
