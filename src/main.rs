@@ -6,6 +6,7 @@ use std::{
 
 use anyhow::{Context, Result};
 use clap::Parser;
+use owo_colors::OwoColorize;
 /// Flattens a folder structure
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
@@ -74,13 +75,14 @@ fn flatten_directory(
                             }
                             eprintln!(
                                 "Renaming '{}' to '{}' to avoid collision.",
-                                sub_path.display(),
-                                new_path.display()
+                                sub_path.display().yellow(),
+                                new_path.display().blue()
                             );
                         } else {
                             eprintln!(
-                                "Warning: File '{}' already exists in target directory. Skipping.",
-                                new_path.display()
+                                "{} File '{}' already exists in target directory. Skipping.",
+                                " Warning:".black().on_yellow(),
+                                new_path.display().blue()
                             );
                             continue;
                         }
