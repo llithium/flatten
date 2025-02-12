@@ -11,3 +11,4 @@ path = "src/main.rs"
 anyhow = "1.0.95"
 clap = { version = "4.5.28", features = ["derive"] }
 owo-colors = "4.1.0"
+walkdir = "2.5.0"
